@@ -1,0 +1,143 @@
+#content {
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+.navbar {
+  padding: 0 !important;
+  position: fixed !important;
+  width: 100%;
+  z-index: 999;
+}
+
+.container-fluid {
+  background-color: #04264F;
+}
+
+a, i{color:#ccc !important;}
+.navbar i{color:#fff !important;}
+
+.navbar-toggler {
+  padding: 0.7rem .75rem 0.25rem .20rem !important;
+  font-size: 1.3rem !important;
+  line-height: 1.5 !important;
+}
+
+.navbar-toggler:focus, .navbar-toggler:hover {
+  outline: none;
+}
+
+.navbar .title {
+  position: absolute;
+  left: 44px;
+  right: 44px;
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+  color: #fff;
+}
+
+.video {
+  box-shadow: 1px 6px 10px 2px rgba(35, 35, 35, 0.62);
+  height: 600px;
+  max-height: 800px;
+  width: 1067px;
+}
+
+.nav-link:hover{
+  color:#fff !important;
+}
+.nav-link:focus, .active{
+  color:#fff !important;
+   font-weight: bold;
+    text-decoration: none;
+  }
+
+.row {
+  margin-bottom: 20px;
+}
+
+.button-left {
+  left: 0;
+}
+
+.button-right {
+  right: 0;
+  z-index: 999;
+}
+
+.right-icon {
+  width: auto !important;
+}
+
+.right-icon a{
+  float: left;
+  width: auto !important;
+  height: auto !important;
+  font-size: 24px;
+  padding: 11px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  background: #003058;
+  color: #fff;
+  transition: all 0.3s;
+  margin-left: -250px;
+}
+
+#sidebar.active {
+  margin: 0;
+}
+
+#sidebar .sidebar-header {
+  padding: 8px;
+  background: #138496;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  cursor: pointer;
+}
+
+#sidebar ul li:hover, #sidebar ul li.active {
+  color: #fff !important;
+  background: #138496;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+#sidebar ul li.active > a > i{
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}

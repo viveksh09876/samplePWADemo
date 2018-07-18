@@ -1,0 +1,50 @@
+<div class="overlay" *ngIf="uploadService.showLoaderImg">
+  <div id="loading-img"></div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-5 col-xs-6 image img-box" *ngFor="let obj of fileUploads; let i=index;">
+        <video *ngIf="obj.type == 'video'" #video controls [src]="getSanitizedURL(obj.url)"></video>
+        <img *ngIf="obj.type == 'image'" [src]="obj.url">
+
+      <div class="img-header" *ngIf="!obj.isSynched">
+        <div class="col-lg-6 col-md-6 col-xs-12 delete-link pull-left">
+          <a (click)="deleteImg(obj);">
+            <i class="fa fa-trash" ></i>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12 sync-link pull-right">
+          <a (click)="syncImage(obj);">
+            <i  class="fa fa-refresh"></i>
+          </a>
+        </div>
+      </div>
+      <div class="img-header" *ngIf="obj.isSynched">
+        <div class="col-lg-6 col-md-6 col-xs-12 delete-link pull-left">
+          <a (click)="deleteOnlineImg(obj);" class="text-white">
+            <i [id]="'delete'+i" class="fa fa-trash" >
+             
+            </i>
+          </a>
+
+        </div>
+        
+        <div class="col-lg-6 col-md-6 col-xs-12 sync-link text-success pull-right">
+          <a>
+            <i class="fa fa-check-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+<label class="btn btn-default hide-this">
+  <input type="file" accept="image/*" capture="camera" (focus)="selectFile($event)" (change)="selectFile($event)" (blur)="selectFile($event)"
+    #fileInput>
+
+    <input type="file" accept="video/*" capture="camcorder" (focus)="selectVideoFile($event)" (change)="selectVideoFile($event)" (blur)="selectVideoFile($event)"
+    #fileVideoInput>  
+</label>

@@ -1,0 +1,43 @@
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <nav id="sidebar" [ngClass]="{'active': toggleMenu}">
+        <div class="sidebar-header">
+            <h3>SCOUT APP</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li [ngClass]="{'active': currentPage == '/'}">
+                <a (click)="goToPage('/', 'Home')"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>
+            </li>
+            <li [ngClass]="{'active': currentPage == '/features'}">
+                <a (click)="goToPage('/features', 'Features')"><i class="fa fa-list"></i>&nbsp;&nbsp;Features</a>
+            </li>
+            <li [ngClass]="{'active': currentPage == '/about'}">
+                <a (click)="goToPage('/about', 'About Us')"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;About</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <div id="content">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" (click)="toggleSideBar()" class="navbar-toggler">          
+                    <i class="navbar-toggler-icon fa fa-bars"></i>
+                </button>
+                <div class="title">{{pageTitle}}</div>
+                <div class="button-right right-icon">
+                  <a class="button" (click)="triggerCamera()">
+                    <i class="fa fa-camera"></i>
+                  </a>
+
+                  <a class="button" (click)="triggerVideoCamera()">
+                    <i class="fa fa-video-camera"></i>
+                  </a>
+                </div>
+            </div>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+</div>   

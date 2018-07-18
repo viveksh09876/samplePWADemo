@@ -1,0 +1,34 @@
+html, body {
+  height: 100%;
+}
+
+
+
+.container {
+  margin-top: 4%;
+}
+
+.container.inner {
+  margin-top: 10%;
+}
+
+.choose-file {
+  height: 0;
+  opacity: 0;
+}
+
+.btn-primary {
+  background-color: #45618E ;
+  border-color: #45618E;
+  width: 58%;
+}
+
+
+
+@media (max-width:680px){
+  .img-box {
+    width: 42% !important;
+  }
+}
+
+
